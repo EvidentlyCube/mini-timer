@@ -13,6 +13,23 @@
 	width: 50px;
 }
 
+.timer-row button{
+    border: none;
+    background: #58a5f0;
+    color: white;
+    width: 120px;
+    border-radius: 2px;
+  	transition: opacity 0.5s ease;
+  	cursor: pointer;
+}
+.timer-row button:hover{
+	opacity: 0.75;
+}
+
+.timer-row button.running{
+	background: #ff5f52;
+}
+
 body{
 	background: #58a5f0;
 }
@@ -38,7 +55,7 @@ h1{
 }
 h6{
 	text-align: center;
-	margin-bottom: 20px;
-	padding-bottom: 10px;
+	margin-bottom: 40px;
+	padding-bottom: 40px;
 	border-bottom: 1px solid #58a5f0;
 }

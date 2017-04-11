@@ -20,8 +20,8 @@ $(document).ready(function(){
 	var $timerInput = null;
 	var startTimestamp = 0;
 	var timerInitialTime = 0;
-	
-	$('div').each(function(){
+
+	$('.timer-row').each(function(){
 		var $div = $(this);
 		
 		$div.find('button').click(function(){
@@ -72,6 +72,7 @@ $(document).ready(function(){
 		$timerInput.val(formatTime(getFinalTime()));
 		$timerInput.attr('data-time', getFinalTime());
 	}
+
 	function autoSave(){
 		if (!isRunning) return;
 		
@@ -90,7 +91,7 @@ $(document).ready(function(){
 		
 		$timer = $('#timer-' + currentTimer);
 		$timerInput = $timer.find('.time');
-		$timer.find('button').text('Stop');
+		$timer.find('button').text('Stop').addClass('running');
 		startTimestamp = getSeconds();
 		timerInitialTime = parseInt($timerInput.attr('data-time'));
 		isRunning = true;
@@ -103,7 +104,7 @@ $(document).ready(function(){
 		
 		var newTime = getFinalTime();
 		
-		$timer.find('button').text('Start');
+		$timer.find('button').text('Start').removeClass('running');;
 		if (updateTime){
 			$timerInput.attr('data-time', newTime);
 			$timerInput.val(formatTime(newTime));
