@@ -1,7 +1,8 @@
 $(document).ready(function(){
+	var rows = 25;
 	var $container = $('.container');
 
-	for(var i = 1; i <= 10; i++){
+	for(var i = 1; i <= rows; i++){
 		$container.append('<div id="timer-'+i+'" class="timer-row" data-id="'+i+'">' +
 			'<input type="text" class="description" value="">' +
 			'<input class="time" data-time="0" value="0:00:00">'+
